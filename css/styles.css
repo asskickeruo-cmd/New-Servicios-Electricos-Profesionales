@@ -1,0 +1,249 @@
+/* Base reset & typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header / Navigation */
+header {
+  background-color: #004a99;
+  color: white;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+header .logo {
+    /* Estilos existentes */
+    font-size: 1.8rem;
+    font-weight: 700;
+    
+    /* Nuevos estilos para el logo */
+    display: flex; /* Convierte el contenedor en un flexbox */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Agrega un pequeño espacio entre la imagen y el texto */
+}
+
+header .logo img {
+    /* Estilos para el tamaño de la imagen del logo */
+    height: 40px; /* Ajusta la altura del logo según tus necesidades */
+    width: auto;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 150px;
+  background: url('../img/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herologo {
+  position: relative;
+  height: 200px;
+  background: url('../img/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.hero-servicios {
+  position: relative;
+  height: 10%;
+  background: url('../img/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 2.0rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+}
+
+.services .service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s
+  ;
+}
+.service-item:hover {
+  transform: translateY(-5px);
+}
+.service-item img.icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.service-item h3 {
+  margin-top: 20px;
+  color: #004a99;
+}
+.service-item p {
+  margin-top: 10px;
+  color: #555;
+}
+
+.mainfoto {
+    grid-area: mainfoto;
+    width: 100%;
+    height: auto;
+    margin: 5px auto 0;
+    overflow: hidden;
+}
+
+.mainfoto ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.mainfoto li {
+    list-style: none;
+    width: 100%;
+}
+
+.mainfoto img {
+    width: 100%;
+}
+
+/* About / Who we are */
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+/* Contact / Footer */
+footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 40px 0;
+}
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+footer h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+footer p, footer a {
+  color: #bbb;
+  margin-bottom: 8px;
+}
+footer a:hover {
+  color: #ffd700;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    margin-top: 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero {
+    height: 250px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Muestra la primera imagen (0% de desplazamiento) */
+  }
+  25% {
+    transform: translateX(-25%); /* Desplaza a la segunda imagen */
+  }
+  50% {
+    transform: translateX(-50%); /* Desplaza a la tercera imagen */
+  }
+  75% {
+    transform: translateX(-75%); /* Desplaza a la cuarta imagen */
+  }
+  100% {
+    transform: translateX(-75%); /* Vuelve al inicio (0% de desplazamiento) */
+  }
+}
