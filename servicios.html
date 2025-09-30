@@ -156,20 +156,115 @@ function addMessage(text, sender) {
 <body>
 
 <header>
-    <div class="container">
-        <div class="logo">
-            <img src="assets/icons/favicon-32x32.png" alt="Logo de la empresa">
-            <span>Servicios Eléctricos Profesionales</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/icons/favicon-32x32.png" alt="Logo de la empresa">
+      <span>Servicios Eléctricos Profesionales</span>
     </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<style>
+/* ---------- ESTILOS GENERALES ---------- */
+header {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+header nav ul li a:hover {
+  color: #f0c040;
+}
+
+/* ---------- BOTÓN HAMBURGUESA ---------- */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+}
+
+/* ---------- MODO CELULAR ---------- */
+@media (max-width: 768px) {
+  /* botón visible en celular */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* menú oculto por defecto */
+  nav {
+    width: 100%;
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  /* cuando se activa */
+  nav.active {
+    display: block;
+  }
+}
+</style>
+
+<script>
+// Botón hamburguesa toggle
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+</script>
+
 
   <section class="container">
     <h2 class="hero-servicios">Nuestros Servicios Detallados</h2>
