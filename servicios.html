@@ -7,6 +7,152 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<div id="chatbot" class="minimized">
+  <div id="chat-header">💬 Chat</div>
+  <div id="chat-body">
+    <div class="bot-msg">Hola 👋 Soy el asistente de SEP.<br>¿Qué querés consultar?<br><br>
+      Opciones: <br>
+      - Inicio <br>
+      - Servicios <br>
+      - Contacto
+    </div>
+  </div>
+  <div id="chat-footer">
+    <input type="text" id="chat-input" placeholder="Escribí aquí...">
+    <button id="send-btn">➤</button>
+  </div>
+</div>
+
+<style>
+/* Estilos del chatbot */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+#chat-header {
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#chat-footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+#chat-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#send-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.bot-msg {
+  background: #f0f0f0;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.user-msg {
+  background: #d1e7ff;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: right;
+}
+
+/* Chat minimizado */
+#chatbot.minimized #chat-body,
+#chatbot.minimized #chat-footer {
+  display: none;
+}
+
+#chatbot.minimized {
+  max-height: 50px;
+  width: 120px;
+}
+</style>
+
+<script>
+const chatHeader = document.getElementById("chat-header");
+const chatbot = document.getElementById("chatbot");
+const sendBtn = document.getElementById("send-btn");
+const chatInput = document.getElementById("chat-input");
+
+// Alternar minimizar/abrir al click en header
+chatHeader.addEventListener("click", () => {
+  chatbot.classList.toggle("minimized");
+});
+
+// Enviar mensaje
+sendBtn.addEventListener("click", sendMessage);
+chatInput.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+  const msg = chatInput.value.trim().toLowerCase();
+  if (!msg) return;
+
+  addMessage(msg, "user");
+
+  let response = "No entendí 🤔. Probá con: inicio, servicios o contacto.";
+  if (msg.includes("inicio")) {
+    response = "👉 Podés volver al inicio haciendo clic aquí: <a href='index.html'>Inicio</a>";
+  } else if (msg.includes("servicios")) {
+    response = "⚡ Ofrecemos instalaciones, certificaciones, tableros y más. Mirá acá: <a href='servicios.html'>Servicios</a>";
+  } else if (msg.includes("contacto")) {
+    response = "📞 Escribinos al WhatsApp <a href='https://wa.me/5491124617069' target='_blank'>+54 9 11 2461 7069</a> o al mail <a href='mailto:servicioselectricosprof.sep@gmail.com'>servicioselectricosprof.sep@gmail.com</a>";
+  }
+
+  setTimeout(() => addMessage(response, "bot"), 600);
+
+  chatInput.value = "";
+}
+
+function addMessage(text, sender) {
+  const chatBody = document.getElementById("chat-body");
+  const div = document.createElement("div");
+  div.className = sender + "-msg";
+  div.innerHTML = text;
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+</script>
+
 <body>
 
 <header>
