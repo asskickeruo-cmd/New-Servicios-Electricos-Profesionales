@@ -347,27 +347,88 @@ toggle.addEventListener("click", () => {
 
 </section> 
     
-  <footer id="contacto">
-    <div class="container">
-      <div>
-        <h4>Contacto</h4>
-        <p><a href="mailto:servicioselectricosprof.sep@gmail.com">Email: servicioselectricosprof.sep@gmail.com</a></p>
-        <p><a href="https://wa.me/+5491124617069" target="_blank">Teléfono: +54 9 11 2461 7069</a></p>
-        <p>Zona de servicio: AMBA</p>
-      </div>
-      <div>
-        <h4>Horario de Atención Telefónica</h4>
-        <p>Lunes a Viernes: 8:00 a 17:00 hs</p>
-      </div>
-      <div>
-        <h4>Síguenos</h4>
-        <p><a href="https://www.instagram.com/sep_4.0/">Instagram</a> · <a href="https://wa.me/+5491124617069" target="_blank">WhatsApp</a></p>
-      </div>
+<footer id="contacto">
+  <div class="container">
+    <div>
+      <h4>Contacto</h4>
+      <p><a href="mailto:servicioselectricosprof.sep@gmail.com">Email: servicioselectricosprof.sep@gmail.com</a></p>
+      <p><a href="https://wa.me/+5491124617069" target="_blank">Teléfono: +54 9 11 2461 7069</a></p>
+      <p>Zona de servicio: AMBA</p>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Servicios Eléctricos Profesionales. Todos los derechos reservados.
+    <div>
+      <h4>Horario de Atención Telefónica</h4>
+      <p>Lunes a Viernes: 8:00 a 17:00 hs</p>
     </div>
-  </footer>
+    <div>
+      <h4>Síguenos</h4>
+      <p><a href="https://www.instagram.com/sep_4.0/">Instagram</a> · <a href="https://wa.me/+5491124617069" target="_blank">WhatsApp</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Servicios Eléctricos Profesionales. Todos los derechos reservados.
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  footer .container div {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 0;
+  }
+
+  footer h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #f1c40f;
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    footer .container div {
+      margin: 15px 0;
+    }
+  }
+</style>
+
 
 </body>
 </html>
