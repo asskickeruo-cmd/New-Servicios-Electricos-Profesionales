@@ -264,7 +264,7 @@ header .logo {
 }
 
 header .logo img {
-  width: 70px;
+  width: 90px;
   height: auto;
 }
 
@@ -306,13 +306,21 @@ header nav ul li a:hover {
 
   header .logo {
     width: 100%;
-    justify-content: space-between; /* texto a la izquierda, menú a la derecha */
+    justify-content: space-between;
+    position: relative;
   }
 
-    /* Centrado perfecto del texto en mobile */
+  /* logo 3% más a la izquierda */
+  header .logo img {
+    width: 90px;
+    position: relative;
+    left: -3%;
+  }
+
+  /* Centrado del texto y separación del logo */
   header .logo span {
     position: absolute;
-    left: 52%;
+    left: 52%; /* antes estaba 52%, lo movemos un poco para separarlo del logo */
     transform: translateX(-50%);
     text-align: center;
     font-size: 25px;
@@ -334,12 +342,6 @@ header nav ul li a:hover {
   nav.active {
     display: block;
     margin-top: 10%;
-  }
-
-  /* logo más grande en mobile */
-  header .logo img {
-    width: 90px;
-    margin-right: 3%;
   }
 }
 </style>
