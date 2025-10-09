@@ -275,11 +275,11 @@ function addMessage(text, sender) {
     <div class="logo">
       <img src="assets/icons/android-chrome-192x192.png" alt="Logo de la empresa">
       <span>Servicios Eléctricos Profesionales</span>
-    </div>
 
-    <!-- Botón hamburguesa -->
-    <div class="menu-toggle" id="menu-toggle" style="margin-top: 5%">
-      ☰ Menú
+      <!-- Botón hamburguesa (lo dejamos dentro del logo para alinear en mobile) -->
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
     </div>
 
     <nav id="menu">
@@ -295,7 +295,7 @@ function addMessage(text, sender) {
 <style>
 /* ---------- ESTILOS GENERALES ---------- */
 header {
-  background: rgba(34, 34, 34, 0.97); /* 0.9 = 90% opaco */
+  background: rgba(34, 34, 34, 0.97);
   color: #fff;
   padding: 10px 20px;
 }
@@ -316,7 +316,7 @@ header .logo {
 }
 
 header .logo img {
-  width: 70px; /* tamaño normal en desktop */
+  width: 70px;
   height: auto;
 }
 
@@ -346,13 +346,19 @@ header nav ul li a:hover {
   cursor: pointer;
   user-select: none;
   color: #fff;
+  margin-left: auto; /* empuja el ícono a la derecha */
 }
 
 /* ---------- MODO CELULAR ---------- */
 @media (max-width: 768px) {
-  /* botón visible en celular */
+  /* Mostrar el botón dentro del logo */
   .menu-toggle {
     display: block;
+  }
+
+  header .logo {
+    width: 100%;
+    justify-content: space-between; /* texto a la izquierda, menú a la derecha */
   }
 
   /* menú oculto por defecto */
@@ -368,15 +374,14 @@ header nav ul li a:hover {
     gap: 15px;
   }
 
-  /* cuando se activa */
   nav.active {
     display: block;
-    margin-top: 5%;
+    margin-top: 10px;
   }
 
   /* logo más grande en mobile */
   header .logo img {
-    width: 90px; /* 100% más grande */
+    width: 90px;
   }
 }
 </style>
@@ -390,6 +395,7 @@ toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 </script>
+
 
 
   
