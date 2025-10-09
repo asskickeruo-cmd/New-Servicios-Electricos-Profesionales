@@ -278,7 +278,7 @@ function addMessage(text, sender) {
 
       <!-- Botón hamburguesa (lo dejamos dentro del logo para alinear en mobile) -->
       <div class="menu-toggle" id="menu-toggle">
-        ☰
+        ☰ Menú
       </div>
     </div>
 
@@ -342,7 +342,7 @@ header nav ul li a:hover {
 /* ---------- BOTÓN HAMBURGUESA ---------- */
 .menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 15px;
   cursor: pointer;
   user-select: none;
   color: #fff;
@@ -359,6 +359,15 @@ header nav ul li a:hover {
   header .logo {
     width: 100%;
     justify-content: space-between; /* texto a la izquierda, menú a la derecha */
+  }
+
+    /* Centrado perfecto del texto en mobile */
+  header .logo span {
+    position: absolute;
+    left: 53%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 25px;
   }
 
   /* menú oculto por defecto */
